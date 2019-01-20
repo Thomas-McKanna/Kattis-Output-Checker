@@ -7,6 +7,12 @@ SET on=1
 SET off=0
 set was_diff=1
 
+IF "%1"=="" (
+    @ECHO ON
+    ECHO "Usage: kattis-check.bat <problem-tag> <path/to/program/executable>"
+    EXIT /B
+)
+
 IF NOT EXIST samples (
     MKDIR samples
     CD samples
